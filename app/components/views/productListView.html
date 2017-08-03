@@ -1,0 +1,88 @@
+<!-- <div class="center">
+  <div ng-repeat="product in products">
+    {{product.attributes.name}}
+  </div>
+
+</div> -->
+
+<div class="jumbotron text-center">
+  <h1>Happy Shop</h1>
+</div>
+
+<div class="container">
+  <div class="row filter-row">
+    <div class="form-group">
+      <div class="col-md-4 col-sm-6">
+        <label>category</label>
+        <select class="form-control" ng-model="selectedCategory" ng-change="reloadList()">
+          <option>all</option>
+          <option>category 1</option>
+          <option>category 2</option>
+          <option>category 3</option>
+        </select>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <label>price range</label>
+        <select class="form-control" ng-model="selectedPriceRange" ng-change="reloadList()">
+          <option>all</option>
+          <option>0-50</option>
+          <option>51-100</option>
+          <option>101-200</option>
+          <option>201-300</option>
+        </select>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <label>sort price</label>
+        <select class="form-control" ng-model="selectedSort" ng-change="reloadList()">
+          <option>low to high</option>
+          <option>high to low</option>
+        </select>
+      </div>
+      <!-- <div class="col-md-4 col-sm-6">
+        <button class="btn btn-default">search</button>
+      </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <!-- BEGIN PRODUCTS -->
+    <div class="col-md-4 col-sm-6" ng-repeat="product in products">
+      <span class="thumbnail">
+        <!-- <img src="https://s12.postimg.org/41uq0fc4d/item_2_180x200.png" alt="..."> -->
+        <a ui-sref="product({productId: product.id })"><h4>{{product.attributes.name}}</h4></a>
+        <div class="ratings">
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star"></span>
+          <span class="glyphicon glyphicon-star-empty"></span>
+        </div>
+        <p>{{product.attributes.category}} </p>
+        <hr class="line">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <p class="price">${{product.attributes.price}}</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="http://cookingfoodsworld.blogspot.in/" target="_blank" >	<button class="btn btn-info right" > BUY ITEM</button></a>
+          </div>
+
+        </div>
+      </span>
+    </div>
+    <!-- END PRODUCTS -->
+  </div>
+  <div class="row filter-row">
+    <div class="col-md-2 col-sm-6">
+      <button class="form-control" ng-click="goFirst()">first</button>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <button class="form-control" ng-click="goPrev()">prev</button>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <button class="form-control" ng-click="goNext()">next</button>
+    </div>
+    <div class="col-md-2 col-sm-6">
+      <button class="form-control" ng-click="goLast()">last</button>
+    </div>
+  </div>
+</div><!-------container----->
