@@ -4,7 +4,7 @@ angular.module('happyShopApp.services',[]).service('ProductService', function ($
 
   var getProducts = function(params){
     var defer = $q.defer();
-    $http.get('http://localhost:3000/products?'+params).then(function (resp) {
+    $http.get('http://54.87.145.62:3001/products?'+params).then(function (resp) {
       defer.resolve(resp.data);
     }, function (err) {
       defer.reject(err);
@@ -14,7 +14,7 @@ angular.module('happyShopApp.services',[]).service('ProductService', function ($
 
   var getProduct = function(id){
     var defer = $q.defer();
-    $http.get('http://localhost:3000/products/'+id).then(function (resp) {
+    $http.get('http://54.87.145.62:3001/products/'+id).then(function (resp) {
       defer.resolve(resp.data);
     }, function (err) {
       defer.reject(err);
